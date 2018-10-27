@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrapper", "{45EFC6F6-3CD9-411F-8C58-85D9F38D2CDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F26BF3D0-6537-4CB2-A7C0-857A104E6879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{40107E2D-A24D-4167-8E41-B716C25CFD19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lilac", "Bootstrapper\Lilac\Lilac.csproj", "{FBFD065E-28B5-46B0-90D3-A5053743D34B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation", "Infrastructure\Foundation\Foundation.csproj", "{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilacCore", "Infrastructure\LilacCore\LilacCore.csproj", "{7330C0EC-F63C-4E17-87BB-7AB077B7CB41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemManager", "Modules\SystemManager\SystemManager.csproj", "{F75C7A0C-C643-48BB-A858-C81091E1779F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBFD065E-28B5-46B0-90D3-A5053743D34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFD065E-28B5-46B0-90D3-A5053743D34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFD065E-28B5-46B0-90D3-A5053743D34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFD065E-28B5-46B0-90D3-A5053743D34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7330C0EC-F63C-4E17-87BB-7AB077B7CB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7330C0EC-F63C-4E17-87BB-7AB077B7CB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7330C0EC-F63C-4E17-87BB-7AB077B7CB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7330C0EC-F63C-4E17-87BB-7AB077B7CB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75C7A0C-C643-48BB-A858-C81091E1779F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75C7A0C-C643-48BB-A858-C81091E1779F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75C7A0C-C643-48BB-A858-C81091E1779F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75C7A0C-C643-48BB-A858-C81091E1779F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBFD065E-28B5-46B0-90D3-A5053743D34B} = {45EFC6F6-3CD9-411F-8C58-85D9F38D2CDF}
+		{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD} = {F26BF3D0-6537-4CB2-A7C0-857A104E6879}
+		{7330C0EC-F63C-4E17-87BB-7AB077B7CB41} = {F26BF3D0-6537-4CB2-A7C0-857A104E6879}
+		{F75C7A0C-C643-48BB-A858-C81091E1779F} = {40107E2D-A24D-4167-8E41-B716C25CFD19}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CC273B7-9A1D-4ABF-8417-2B8DD4ABF7BC}
+	EndGlobalSection
+EndGlobal

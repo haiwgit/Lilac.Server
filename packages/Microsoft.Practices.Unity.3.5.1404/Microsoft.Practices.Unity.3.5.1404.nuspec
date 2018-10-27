@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Practices.Unity</id>
+    <version>3.5.1404</version>
+    <authors>dongl</authors>
+    <owners>dongl</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Microsoft.Practices.Unity - 3.5.1404
+Microsoft.Practices.Unity.Interception - 3.5.1404
+Microsoft.Practices.ServiceLocation - 1.2.0.0</description>
+  </metadata>
+</package>
