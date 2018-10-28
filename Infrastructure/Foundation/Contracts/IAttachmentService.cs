@@ -12,6 +12,6 @@ namespace Lilac.Foundation.Contracts
     public interface IAttachmentService
     {
         [WebGet]
-        string getname();
+        string getstriing();
     }
 }

@@ -34,9 +34,9 @@ namespace Lilac.Foundation.Services
             return null;
         }
 
-        public string getname()
-        {
-            throw new NotImplementedException();
+        public string getstriing() {
+
+            return null;
         }
     }
 }

@@ -1,0 +1,2379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nefarian</name>
+    </assembly>
+    <members>
+        <member name="T:Nefarian.Collections.EqualComparison`1">
+            <summary>
+            比较同一类型的两个对象是否相等的方法
+            </summary>
+        </member>
+        <member name="T:Nefarian.Collections.FixedSizeQueue`1">
+            <summary>
+            固定大小的队列
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Nefarian.Collections.FixedSizeQueue`1.#ctor(System.Int32,System.Boolean)">
+            <param name="size"></param>
+            <param name="autoDequeue">当队列满了之后，新入队的元素是否会造成旧的元素自动出队，即“踢出”</param>
+        </member>
+        <member name="E:Nefarian.Collections.FixedSizeQueue`1.OnAutoDequeued">
+            <summary>
+            当元素被自动踢出队列之后触发
+            </summary>
+        </member>
+        <member name="P:Nefarian.Collections.FixedSizeQueue`1.Size">
+            <summary>
+            队列的固定大小
+            </summary>
+        </member>
+        <member name="P:Nefarian.Collections.FixedSizeQueue`1.IsFull">
+            <summary>
+            队列是否已满
+            </summary>
+        </member>
+        <member name="P:Nefarian.Collections.FixedSizeQueue`1.IsEmpty">
+            <summary>
+            队列是否为空
+            </summary>
+        </member>
+        <member name="T:Nefarian.Collections.HybridDictionary`2">
+            <summary>
+            System.Collections.Specialized.HybridDictionary的泛型版本。
+            在集合较小时使用Nefarian.Collections.ListDictionary，然后在集合变大时切换到System.Collections.Generic.Dictionary。
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="T:Nefarian.Collections.LinkedNode`1">
+            <summary>
+            单链表节点
+            </summary>
+        </member>
+        <member name="M:Nefarian.Collections.LinkedNode`1.GetEnumerator">
+            <summary>
+            遍历单链表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Collections.LinkedNode`1.Value">
+            <summary>
+            节点的数据
+            </summary>
+        </member>
+        <member name="P:Nefarian.Collections.LinkedNode`1.Next">
+            <summary>
+            下一个节点
+            </summary>
+        </member>
+        <member name="T:Nefarian.Collections.ListDictionary`2">
+            <summary>
+            System.Collections.Specialized.ListDictionary的泛型版本。
+            使用单链表实现的字典，当集合包含不超过10个元素时，具有更快的性能和更小的内存使用。
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="M:Nefarian.Collections.ListDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:Nefarian.Collections.ListDictionary`2.#ctor(Nefarian.Collections.EqualComparison{`0})">
+            <param name="comparison">比较方法</param>
+        </member>
+        <member name="M:Nefarian.Collections.ListDictionary`2.UseDefaultComparison">
+            <summary>
+            使用默认的比较方法
+            </summary>
+        </member>
+        <member name="T:Nefarian.Collections.SynchronizedDictionary`2">
+            <summary>
+            线程安全的IDictionary包装
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="M:Nefarian.Collections.SynchronizedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})">
+            <param name="baseDictionary">要包装的基础字典</param>
+        </member>
+        <member name="M:Nefarian.Collections.SynchronizedDictionary`2.GetEnumerator">
+            <summary>
+            以线程安全的方式使用foreach遍历整个集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Collections.SynchronizedDictionary`2.Keys">
+            <summary>
+            以线程安全的方式获取Keys集合，并可以在随后以线程安全的方式进行遍历
+            </summary>
+        </member>
+        <member name="P:Nefarian.Collections.SynchronizedDictionary`2.Values">
+            <summary>
+            以线程安全的方式获取Values集合，并可以在随后以线程安全的方式进行遍历
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.BufferBag">
+            <summary>
+            数据包
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.BufferBag.Put(System.Byte[])">
+            <summary>
+            放入部分数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Nefarian.Communication.BufferBag.Put(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            放入部分数据中的一部分
+            </summary>
+            <param name="data"></param>
+            <param name="start">datas的起始索引</param>
+            <param name="length">datas从start开始，要放入的长度</param>
+        </member>
+        <member name="M:Nefarian.Communication.BufferBag.Take">
+            <summary>
+            取出完整数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.BufferBag.Clear">
+            <summary>
+            清空数据包
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.BufferBag.Count">
+            <summary>
+            当前包中已经存储的字节总数
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.ConnectionClosedEventArgs">
+            <summary>
+            WebSocket连接关闭的事件参数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.ConnectionClosedEventArgs.Code">
+            <summary>
+            关闭代码
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.ConnectionClosedEventArgs.Reason">
+            <summary>
+            关闭原因
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.HandshakeEventArgs.SubUrl">
+            <summary>
+            握手请求中的url部分
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.HandshakeEventArgs.ConnectedUri">
+            <summary>
+            握手连接的完整uri
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.HandshakeEventArgs.Properties">
+            <summary>
+            用于传递握手过程中携带的一些额外数据
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.HandshakeEventArgs.Accept">
+            <summary>
+            是否接受客户端的握手请求
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.HttpContentTypes">
+            <summary>
+            Http ContentType
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.IWebSocketService">
+            <summary>
+            WebSocket服务
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.IWebSocketService.Connecting(Nefarian.Communication.WebSocketHandshake)">
+            <summary>
+            在客户端与服务器建立连接时调用
+            </summary>
+            <param name="handshake"></param>
+        </member>
+        <member name="M:Nefarian.Communication.IWebSocketService.Connected(Nefarian.Communication.WebSocketConnection)">
+            <summary>
+            当客户端与服务建立连接之后调用
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocket">
+            <summary>
+            表示一个WebSocket连接
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocket.InvalidHandshake">
+            <summary>
+            无效的握手请求
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocket.Refuse">
+            <summary>
+            拒绝客户端的握手请求
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocket.Close">
+            <summary>
+            向客户端发送关闭连接的消息
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocket.CloseHandshake(System.Int32,System.Int32,System.String)">
+            <summary>
+            关闭连接握手
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnPrepareHandshake">
+            <summary>
+            准备进行WebSocket握手时触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnHandshakeSuccess">
+            <summary>
+            握手连接成功后触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnHandshakeFailed">
+            <summary>
+            握手连接失败时触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnDataReceived">
+            <summary>
+            当接收到客户端发送的数据时触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnClosed">
+            <summary>
+            当WebSocket连接关闭后触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Communication.WebSocket.OnError">
+            <summary>
+            连接过程中发生错误时触发
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.IRequestContextAdapter">
+            <summary>
+            请求上下文适配器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.IRequestContextAdapter.GetCurrentContext">
+            <summary>
+            获取当前请求关联的ServiceRequestContext对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.IRequestContextAdapter.ReleaseCurrentContext">
+            <summary>
+            释放当前请求关联的ServiceRequestContext对象
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketCloseCode">
+            <summary>
+            WebSocket关闭代码
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.NormalClosure">
+            <summary>
+            正常关闭
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.EndpointUnavailable">
+            <summary>
+            终端不再可用。如服务器关闭或浏览器导航到其他页面。
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.ProtocolError">
+            <summary>
+            协议错误
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.InvalidMessageType">
+            <summary>
+            不可接受的数据类型。当服务器接受到一条无法处理的意外类型消息时，如服务器只允许Text消息，却接收到一条Binary消息。
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.InvalidPayloadData">
+            <summary>
+            无效数据。已接收到的数据类型与该消息类型不一致，如Text消息包含错误的UTF-8编码数据。
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.PolicyViolation">
+            <summary>
+            消息违反策略。这是一个通用的状态码，用在没有更合适的状态码或需要隐藏具体的策略细节时。
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.MessageTooBig">
+            <summary>
+            消息过大
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.MandatoryExtension">
+            <summary>
+            客户端需要扩展。当客户端需要一个或多个服务器无法协商的特殊扩展时，从客户端（浏览器）发送这一代码。仅供客户端（浏览器）使用。
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketCloseCode.InternalServerError">
+            <summary>
+            服务器遇到意外错误
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketConnection">
+            <summary>
+            WebSocket服务连接，公开WebSocket操作接口
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketConnection.Send(System.String)">
+            <summary>
+            向客户端发送数据
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketConnection.Send(System.Byte[])">
+            <summary>
+            向客户端发送数据
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketDataFrame">
+            <summary>
+            数据帧
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketDataFrame.MinHeadLength">
+            <summary>
+            数据头的最小长度
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketDataFrame.PayloadMaxLength">
+            <summary>
+            payload数据的最大长度
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.GetByteCount(System.String)">
+            <summary>
+            计算发送指定的消息需要多少字节
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.GetByteCount(System.String,System.Boolean)">
+            <summary>
+            计算发送指定的消息需要多少字节
+            </summary>
+            <param name="message"></param>
+            <param name="isCloseFrame">该消息是否为结束消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.GetByteCount(System.Byte[])">
+            <summary>
+            计算发送指定的消息需要多少字节
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.CreateTextFrame(System.Byte[],System.String)">
+            <summary>
+            创建一个文本帧
+            </summary>
+            <param name="buffer"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.CreateBinaryFrame(System.Byte[],System.Byte[])">
+            <summary>
+            创建一个字节帧
+            </summary>
+            <param name="buffer"></param>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketDataFrame.CreateCloseFrame(System.Byte[],System.Nullable{System.Int32},System.String)">
+            <summary>
+            创建一个关闭帧
+            </summary>
+            <param name="code"></param>
+            <param name="reason"></param>
+            <returns>填充的字节数</returns>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.IsFinal">
+            <summary>
+            表示此帧是否是消息的最后帧。第一帧也可能是最后帧。
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.OpCode">
+            <summary>
+            操作码
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.IsMasked">
+            <summary>
+            Payload Data是否经过了掩码处理
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.HeadLength">
+            <summary>
+            数据帧头的长度
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.PayloadLength">
+            <summary>
+            Payload Data消息长度
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketDataFrame.FrameState">
+            <summary>
+            数据帧状态
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.DataFrameState">
+            <summary>
+            数据帧状态
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.DataFrameState.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.DataFrameState.Invalid">
+            <summary>
+            无效的帧（协议错误）
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.DataFrameState.PayloadTooBig">
+            <summary>
+            payload数据超过最大长度
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.DataFrameState.IncompleteHead">
+            <summary>
+            消息头不完整
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketHandshake">
+            <summary>
+            公开WebSocket握手信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Communication.WebSocketHandshake.Accept">
+            <summary>
+            是否同意连接
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketOpCode">
+            <summary>
+            操作码
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.ContinuationFrame">
+            <summary>
+            连续帧
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.TextFrame">
+            <summary>
+            文本帧
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.BinaryFrame">
+            <summary>
+            二进制帧
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.ConnectionClose">
+            <summary>
+            连接关闭
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.Ping">
+            <summary>
+            Ping
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketOpCode.Pong">
+            <summary>
+            Pong
+            </summary>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketServer">
+            <summary>
+            WebSocket服务器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketServer.Configure(Nefarian.Configuration.WebSocketConfiguration)">
+            <summary>
+            注册实现IWebSocketService接口的服务
+            </summary>
+            <param name="serviceName">服务名</param>
+            <param name="serviceType">服务类的Type</param>
+            <param name="requiredAuthentication">是否需要对握手身份验证，默认true</param>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketServer.Start">
+            <summary>
+            启动对WebSocket请求的监听
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketServer.Start(System.Int32)">
+            <summary>
+            启动对WebSocket请求的监听
+            </summary>
+            <param name="backlog">挂起等待连接的队列的最大长度</param>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketServer.Close">
+            <summary>
+            关闭对请求的监听
+            </summary>
+        </member>
+        <member name="M:Nefarian.Communication.WebSocketServer.CheckState(Nefarian.Communication.WebSocketServer.ServerState[])">
+            <summary>
+            检查当前服务状态是否允许该操作
+            </summary>
+            <param name="allowedStates">允许的服务状态</param>
+        </member>
+        <member name="T:Nefarian.Communication.WebSocketServer.ServerState">
+            <summary>
+            服务状态
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketServer.ServerState.Init">
+            <summary>
+            Server已经被创建，但还没有绑定监听的ip和端口
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketServer.ServerState.Bound">
+            <summary>
+            Server已经绑定了监听的地址，但还没有启动监听
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketServer.ServerState.Listening">
+            <summary>
+            Server正在监听websocket连接请求
+            </summary>
+        </member>
+        <member name="F:Nefarian.Communication.WebSocketServer.ServerState.Stopped">
+            <summary>
+            Server已经停止了监听
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.AppServiceSite">
+            <summary>
+            应用程序服务站点
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AppServiceSite.NefarianContainer">
+            <summary>
+            框架容器
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AppServiceSite.AppContainer">
+            <summary>
+            应用程序容器（模块容器）
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AppServiceSite.Modules">
+            <summary>
+            所有加载的模块
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AppServiceSite.AuthTicketManager">
+            <summary>
+            身份票据管理器
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AppServiceSite.SessionDataDriver">
+            <summary>
+            Session会话数据驱动程序
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.AuthenticationException">
+            <summary>
+            表示请求没有通过身份验证时产生的异常
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.InterruptRequestException">
+            <summary>
+            表示中断请求的异常
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.InterruptRequestException.ProvideFault(System.Collections.ObjectModel.Collection{System.Net.Mime.ContentType})">
+            <summary>
+            提供返回给客户端的消息
+            </summary>
+            <param name="accepts">客户端期望接收的内容类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Core.AuthenticationInspector">
+            <summary>
+            身份票据检查器
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ClientAccessPolicyService">
+            <summary>
+            silverlight跨域调用授权服务
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.HttpMessageReader">
+            <summary>
+            HTTP消息读取器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.Buff">
+            <summary>
+            将消息缓存，以供后续使用
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.Copy">
+            <summary>
+            创建一个消息的副本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadJsonAsString">
+            <summary>
+            读取utf-8编码的json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadXmlAsString">
+            <summary>
+            读取utf-8编码的xml字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadJsonAsStream">
+            <summary>
+            读取json数据流
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadXmlAsStream">
+            <summary>
+            读取xml数据流
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadJsonAsBytes">
+            <summary>
+            读取json字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadXmlAsBytes">
+            <summary>
+            读取xml字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.HttpMessageReader.ReadRaw(System.IO.Stream)">
+            <summary>
+            读取原始二进制数据流，并写入目标流
+            </summary>
+            <param name="writeStream">要写入的目标流</param>
+        </member>
+        <member name="P:Nefarian.Core.HttpMessageReader.IsEmpty">
+            <summary>
+            是否为空消息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpMessageReader.IsJson">
+            <summary>
+            是否为json格式的消息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpMessageReader.IsXml">
+            <summary>
+            是否为xml格式的消息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpMessageReader.IsRaw">
+            <summary>
+            是否为原始二进制格式的消息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpMessageReader.IsUnknown">
+            <summary>
+            是否无法确定消息的格式
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.IAuthenticationTicketManager">
+            <summary>
+            身份票据管理器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.IAuthenticationTicketManager.CreateTicket(Nefarian.Core.AuthenticationTicket)">
+            <summary>
+            创建一个加密的身份票据
+            </summary>
+            <param name="ticket">身份票据</param>
+            <returns>加密后的票据字符串</returns>
+        </member>
+        <member name="M:Nefarian.Core.IAuthenticationTicketManager.ValidateTicket(System.String,System.UriTemplateMatch,System.Net.WebHeaderCollection,System.ServiceModel.Channels.Message@,Nefarian.Core.AuthenticationTicket@)">
+            <summary>
+            验证身份票据
+            </summary>
+            <param name="method">请求的方法</param>
+            <param name="uriMatch">请求匹配的uri模板</param>
+            <param name="headers">请求头</param>
+            <param name="message">请求的消息体</param>
+            <param name="ticket">如果验证通过，则输出身份票据</param>
+            <returns>验证通过为true，否则为false</returns>
+        </member>
+        <member name="P:Nefarian.Core.IAuthenticationTicketManager.CryptoKey">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.IAuthenticationTicketManager.TicketKey">
+            <summary>
+            请求信息中携带的身份票据的标头Key
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.IAuthenticationTicketManager.IgnoreUrlCollection">
+            <summary>
+            不进行身份验证的url集合
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.InProcSessionDataDriver">
+            <summary>
+            存储在内存中的会话数据提供程序
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ISessionInfoDataDriver">
+            <summary>
+            用于提供会话信息数据的驱动程序
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            通过配置参数初始化ISessionInfoDataDriver
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.CreateNew">
+            <summary>
+            使用默认超时时间创建一个新的会话信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.CreateNew(System.Int32)">
+            <summary>
+            创建一个新的会话信息，并指定其超时时间
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.GetSession(System.String)">
+            <summary>
+            获取指定ID的会话信息
+            </summary>
+            <param name="sessionID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.Save(Nefarian.Core.ISessionInfo)">
+            <summary>
+            更新、保存会话信息
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfoDataDriver.Remove(System.String)">
+            <summary>
+            移除指定ID的会话信息
+            </summary>
+            <param name="sessionID"></param>
+        </member>
+        <member name="P:Nefarian.Core.ISessionInfoDataDriver.Timeout">
+            <summary>
+            会话信息的默认超时时间（分钟）
+            </summary>
+        </member>
+        <member name="E:Nefarian.Core.ISessionInfoDataDriver.OnEnd">
+            <summary>
+            会话结束事件
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.InProcSessionDataDriver.GetScanTimeInterval(System.Int32)">
+            <summary>
+            根据超时时间，计算扫描超时时间间隔
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.InProcSessionDataDriver.Scan(System.Object)">
+            <summary>
+            扫描过期的Session
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="T:Nefarian.Core.InProcSessionInfo">
+            <summary>
+            表示内存中的会话信息
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ISessionInfo">
+            <summary>
+            会话信息数据
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfo.Add(System.String,System.Object)">
+            <summary>
+            在会话信息中添加指定键的数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfo.Remove(System.String)">
+            <summary>
+            移除会话信息中指定键的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfo.Clear">
+            <summary>
+            清除所有会话数据
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ISessionInfo.ContainsKey(System.String)">
+            <summary>
+            判断会话信息中是否包含指定的键
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Core.ISessionInfo.SessionID">
+            <summary>
+            会话的唯一标识ID
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ISessionInfo.Item(System.String)">
+            <summary>
+            获取或设置指定键的会话数据
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Core.InProcSessionInfo.SyncRoot">
+            <summary>
+            获取同步锁定对象
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.InvalidSessionException">
+            <summary>
+            表示SessionID无效或Session超时的异常
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.MessageInspectorAttribute">
+            <summary>
+            消息检查器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.MessageInspectorAttribute.AfterReceiveRequest(System.ServiceModel.Channels.Message@)">
+            <summary>
+            在请求入站时调用
+            </summary>
+            <param name="request">请求消息</param>
+            <returns>用于关联的状态对象，该对象将在BeforeSendReply方法中传回</returns>
+        </member>
+        <member name="M:Nefarian.Core.MessageInspectorAttribute.BeforeSendReply(System.ServiceModel.Channels.Message@,System.Object)">
+            <summary>
+            在请求出站时调用
+            </summary>
+            <param name="reply">答复消息</param>
+            <param name="correlationState">从AfterReceiveRequest方法返回的关联的状态对象</param>
+        </member>
+        <member name="P:Nefarian.Core.MessageInspectorAttribute.Order">
+            <summary>
+            检查器的执行顺序。按照从小到大执行。
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.MessageInspectorAttribute.Session">
+            <summary>
+            当前用户的会话数据
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.OperationInspectorAttribute">
+            <summary>
+            操作方法检查器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.OperationInspectorAttribute.BeforeCall(System.String,System.Object[])">
+            <summary>
+            在调用操作方法之前执行
+            </summary>
+            <param name="operationName">要调用的操作方法的名称</param>
+            <param name="inputs">传递到操作方法的参数对象</param>
+            <returns>传递给AfterCall的相关数据</returns>
+        </member>
+        <member name="M:Nefarian.Core.OperationInspectorAttribute.AfterCall(System.String,System.Object[],System.Object,System.Object)">
+            <summary>
+            在操作方法调用完成之后执行
+            </summary>
+            <param name="operationName">所调用的操作方法的名称</param>
+            <param name="outputs">操作方法的输出参数</param>
+            <param name="returnValue">操作方法的返回值</param>
+            <param name="correlationState">获取从BeforeCall传递来的相关数据</param>
+        </member>
+        <member name="P:Nefarian.Core.OperationInspectorAttribute.Order">
+            <summary>
+            检查器的执行顺序。按照从小到大执行。
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.OperationInspectorAttribute.Session">
+            <summary>
+            当前用户的会话数据
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.PipelineMode">
+            <summary>
+            管道模型
+            </summary>
+        </member>
+        <member name="F:Nefarian.Core.PipelineMode.Queue">
+            <summary>
+            队列式 Z型
+            </summary>
+        </member>
+        <member name="F:Nefarian.Core.PipelineMode.Stack">
+            <summary>
+            栈式 U型
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.Pipeline">
+            <summary>
+            消息处理管道
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.Pipeline.AddInspector(Nefarian.Core.MessageInspectorAttribute)">
+            <summary>
+            添加消息检查器
+            </summary>
+            <param name="inspector"></param>
+        </member>
+        <member name="E:Nefarian.Core.Pipeline.BeginRequest">
+            <summary>
+            请求开始时，进入管道之前触发的事件
+            </summary>
+        </member>
+        <member name="E:Nefarian.Core.Pipeline.EndRequest">
+            <summary>
+            请求处理结束，从管道流出时触发的事件
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.SessionDataStoreItem">
+            <summary>
+            存储在Session会话提供程序中的数据项
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionDataStoreItem.CreationTime">
+            <summary>
+            Session的创建时间
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionDataStoreItem.LastVisitTime">
+            <summary>
+            Session的最后一次访问时间
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionDataStoreItem.Timeout">
+            <summary>
+            Session的超时时长（分钟）
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionDataStoreItem.SessionInfo">
+            <summary>
+            会话信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionDataStoreItem.State">
+            <summary>
+            会话数据的状态
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.SessionInspector">
+            <summary>
+            Session会话检查器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.SessionInspector.LoadSession(Nefarian.Core.ServiceRequestContext)">
+            <summary>
+            加载Session会话
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nefarian.Core.SessionInspector.UpdateSession(Nefarian.Core.ServiceRequestContext)">
+            <summary>
+            更新Session会话
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Nefarian.Core.SessionItemState">
+            <summary>
+            Session数据项状态
+            </summary>
+        </member>
+        <member name="F:Nefarian.Core.SessionItemState.Idle">
+            <summary>
+            Session目前闲置，没有被请求占用
+            </summary>
+        </member>
+        <member name="F:Nefarian.Core.SessionItemState.Locked">
+            <summary>
+            Session正在被请求访问中，已锁定
+            </summary>
+        </member>
+        <member name="F:Nefarian.Core.SessionItemState.Expired">
+            <summary>
+            Session已经过期，准备删除
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.UrlMatchCollection">
+            <summary>
+            用于匹配url路径的集合
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.WebRequestContext">
+            <summary>
+            HTTP请求上下文
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.Current">
+            <summary>
+            获取当前请求的上下文对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.Current``1">
+            <summary>
+            获取当前请求的自定义上下文对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.CreateTicket">
+            <summary>
+            使用默认过期时间为当前请求创建一个身份票据
+            </summary>
+            <returns>加密后的身份票据</returns>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.CreateTicket(System.Int32)">
+            <summary>
+            为当前请求创建一个身份票据，并指定过期时间
+            </summary>
+            <param name="timeout">票据的过期时间</param>
+            <returns>加密后的身份票据</returns>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.SignOut">
+            <summary>
+            注销当前身份票据及会话
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.Find``1(``0@)">
+            <summary>
+            查找当前请求关联的自定义数据对象
+            </summary>
+            <typeparam name="T">数据对象的类型</typeparam>
+            <param name="data">如果该类型的数据对象存在，则输出</param>
+            <returns>存在则返回true，否则为false</returns>
+        </member>
+        <member name="M:Nefarian.Core.WebRequestContext.Bind``1(``0)">
+            <summary>
+            给当前请求绑定自定义数据对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="P:Nefarian.Core.WebRequestContext.Session">
+            <summary>
+            当前用户的会话数据
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.WebServiceSite">
+            <summary>
+            服务站点
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.WebServiceSite.GetAppContainer">
+            <summary>
+            获取应用程序的容器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.WebServiceSite.GetModuleContainer(System.Type)">
+            <summary>
+            获取模块的容器
+            </summary>
+            <param name="moduleType">模块的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.WebServiceSite.GetModuleContainer``1">
+            <summary>
+            获取模块的容器
+            </summary>
+            <typeparam name="T">模块的类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="E:Nefarian.Core.WebServiceSite.OnSessionEnd">
+            <summary>
+            Session会话结束事件
+            </summary>
+        </member>
+        <member name="T:Nefarian.Design.ExpectedValuesValidator">
+            <summary>
+            参数值必须在预期值列表的范围内的验证器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Design.ExpectedValuesValidator.#ctor(System.Object[])">
+            <param name="values">预期值列表</param>
+        </member>
+        <member name="T:Nefarian.Design.ExpectedValuesValidatorAttribute">
+            <summary>
+            表示参数值必须在预期值列表的范围内
+            </summary>
+        </member>
+        <member name="M:Nefarian.Design.ExpectedValuesValidatorAttribute.#ctor(System.Object[])">
+            <param name="expectedValues">预期值列表</param>
+        </member>
+        <member name="P:Nefarian.Design.ExpectedValuesValidatorAttribute.ExpectedValues">
+            <summary>
+            预期值列表
+            </summary>
+        </member>
+        <member name="T:Nefarian.Design.StringTypeConverter">
+            <summary>
+            string形式表示的Type类型与Type类型的转换器
+            </summary>
+        </member>
+        <member name="T:Nefarian.Startup.Bootstrapper">
+            <summary>
+            启动程序
+            </summary>
+        </member>
+        <member name="F:Nefarian.Startup.Bootstrapper.ModuleUriTemplateName">
+            <summary>
+            模块Name在服务地址url模板中的参数名
+            </summary>
+        </member>
+        <member name="F:Nefarian.Startup.Bootstrapper.ServiceUriTemplateName">
+            <summary>
+            服务Name在服务地址url模板中的参数名
+            </summary>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.Configure">
+            <summary>
+            读取配置参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.Run">
+            <summary>
+            启动服务
+            </summary>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadBootstrapper(Nefarian.Startup.BootstrapperEventArgs)">
+            <summary>
+            加载启动参数
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadAuthentication(Nefarian.Configuration.AuthenticationConfiguration)">
+            <summary>
+            加载身份验证配置
+            </summary>
+            <param name="authConfig"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadSession(Nefarian.Configuration.SessionConfiguration)">
+            <summary>
+            加载Session会话配置
+            </summary>
+            <param name="sessionConfig"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadModules(Nefarian.Configuration.ModuleConfigurationCollection)">
+            <summary>
+            加载模块（只加载模块信息，不创建模块实例、不启动模块服务）
+            </summary>
+            <param name="modules"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadWebSocket(Nefarian.Configuration.WebSocketConfiguration)">
+            <summary>
+            加载websocket配置
+            </summary>
+            <param name="websocketConfig"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadSilverlightCrossDomain(Nefarian.Startup.BootstrapperEventArgs)">
+            <summary>
+            加载silverlight跨域调用授权配置
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.LoadComplete">
+            <summary>
+            配置加载完成
+            </summary>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.InitializeModules(Nefarian.Startup.BootstrapperEventArgs)">
+            <summary>
+            创建、初始化模块实例，并启动模块内的服务
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.InitModule(Nefarian.Configuration.ModuleConfiguration,Nefarian.Startup.BootstrapperEventArgs)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="moduleConfig"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.StartService(Nefarian.Configuration.ModuleConfiguration,Nefarian.Configuration.ServiceConfiguration,Nefarian.Startup.BootstrapperEventArgs)">
+            <summary>
+            启动服务
+            </summary>
+            <param name="moduleConfig"></param>
+            <param name="serviceConfig"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nefarian.Startup.Bootstrapper.CreateHost(System.Type,System.Uri)">
+            <summary>
+            创建服务宿主
+            </summary>
+            <param name="serviceType"></param>
+            <param name="serviceUri"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Nefarian.Startup.Bootstrapper.PreInitModules">
+            <summary>
+            在初始化所有模块之前触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Startup.Bootstrapper.InitModulesComplete">
+            <summary>
+            在所有模块初始化完成之后触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Startup.Bootstrapper.OnServiceOpening">
+            <summary>
+            打开每个服务之前触发
+            </summary>
+        </member>
+        <member name="E:Nefarian.Startup.Bootstrapper.OnServiceOpened">
+            <summary>
+            每个服务打开完成之后触发
+            </summary>
+        </member>
+        <member name="T:Nefarian.Startup.BootstrapperEventArgs">
+            <summary>
+            启动程序事件参数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.BootstrapperEventArgs.Configuration">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.BootstrapperEventArgs.BaseUri">
+            <summary>
+            服务基地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.BootstrapperEventArgs.ServiceUriTemplate">
+            <summary>
+            服务Uri模板
+            </summary>
+        </member>
+        <member name="T:Nefarian.Startup.ServiceOpenEventArgs">
+            <summary>
+            服务打开事件参数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.BootstrapperArgs">
+            <summary>
+            启动事件参数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.ServiceType">
+            <summary>
+            服务类型
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.ServiceUri">
+            <summary>
+            服务Uri地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.EndpointsAddress">
+            <summary>
+            服务打开之后，服务的所有终结点地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.ModuleName">
+            <summary>
+            服务所在的模块名称
+            </summary>
+        </member>
+        <member name="P:Nefarian.Startup.ServiceOpenEventArgs.ServiceName">
+            <summary>
+            服务的名称
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.GenericEventArgs`1">
+            <summary>
+            带有一个参数的通用事件参数
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Nefarian.Utility.GenericEventArgs`1.Argument">
+            <summary>
+            事件传递的参数
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.HttpMethod">
+            <summary>
+            Http Method
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.AuthenticationConfiguration">
+            <summary>
+            身份验证配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.AuthenticationConfiguration.TicketManagerType">
+            <summary>
+            身份票据管理器的类型
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.AuthenticationConfiguration.CryptoKey">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.AuthenticationConfiguration.TicketKey">
+            <summary>
+            请求信息中携带的身份票据的标头Key
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.AuthenticationConfiguration.IgnoreUrls">
+            <summary>
+            不进行身份验证的服务操作url，url从根路径“/”开始。可以在url的末尾使用通配符“*”表示以该url为前缀的所有url。
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.BootstrapperConfiguration">
+            <summary>
+            启动参数配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.BootstrapperConfiguration.IP">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.BootstrapperConfiguration.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.BootstrapperConfiguration.Protocol">
+            <summary>
+            协议
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.ModuleConfiguration">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.ModuleConfiguration.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.ModuleConfiguration.ModuleType">
+            <summary>
+            模块类型
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.ModuleConfiguration.Services">
+            <summary>
+            模块中的服务列表
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.ModuleConfigurationCollection">
+            <summary>
+            模块配置集合
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.NefarianConfiguration">
+            <summary>
+            Nefarian框架参数配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.Bootstrapper">
+            <summary>
+            启动参数配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.Authentication">
+            <summary>
+            身份验证配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.Session">
+            <summary>
+            Session会话配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.Modules">
+            <summary>
+            模块列表
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.WebSocket">
+            <summary>
+            WebSocket服务配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.NefarianConfiguration.SilverlightCrossDomain">
+            <summary>
+            Silverlight跨域调用配置
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.ServiceConfiguration">
+            <summary>
+            服务配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.ServiceConfiguration.ServiceName">
+            <summary>
+            服务名称
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.ServiceConfiguration.ServiceType">
+            <summary>
+            服务类型
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.ServiceConfigurationCollection">
+            <summary>
+            服务配置集合
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.SessionMode">
+            <summary>
+            Session配置模式
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SessionMode.InProc">
+            <summary>
+            服务进程内
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SessionMode.Custom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.SessionConfiguration">
+            <summary>
+            Session会话配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SessionConfiguration.Timeout">
+            <summary>
+            Session的过期超时时间（分钟）。默认为30分钟。
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SessionConfiguration.Mode">
+            <summary>
+            Session的配置模式。默认为InProc。
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SessionConfiguration.DriverType">
+            <summary>
+            当Session配置模式为Custom时，Session会话数据驱动程序的类型
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SessionConfiguration.Params">
+            <summary>
+            用于初始化Session会话驱动程序的配置参数
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.SilverlightTcpPolicyMode">
+            <summary>
+            Silverlight TCP跨域调用策略
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SilverlightTcpPolicyMode.Deny">
+            <summary>
+            不允许TCP跨域调用
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SilverlightTcpPolicyMode.Http">
+            <summary>
+            提供可通过Http的方式获取跨域策略
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SilverlightTcpPolicyMode.Tcp">
+            <summary>
+            提供可通过Tcp的方式获取跨域策略
+            </summary>
+        </member>
+        <member name="F:Nefarian.Configuration.SilverlightTcpPolicyMode.Both">
+            <summary>
+            同时提供Http和Tcp两种方式获取跨域策略
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.SilverlightCrossDomainConfiguration">
+            <summary>
+            silverlight跨域调用配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SilverlightCrossDomainConfiguration.HttpEnabled">
+            <summary>
+            是否允许http调用服务
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.SilverlightCrossDomainConfiguration.TcpEnabled">
+            <summary>
+            是否允许tcp调用服务
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.WebSocketConfiguration">
+            <summary>
+            WebSocket配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.IP">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.Protocol">
+            <summary>
+            协议
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.BaseAddress">
+            <summary>
+            基地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.BacklogQueueLength">
+            <summary>
+            挂起等待连接的队列的最大长度
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketConfiguration.Services">
+            <summary>
+            WebSocket服务列表
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.WebSocketServiceConfiguration">
+            <summary>
+            WebSocket服务配置
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketServiceConfiguration.Address">
+            <summary>
+            服务相对地址
+            </summary>
+        </member>
+        <member name="P:Nefarian.Configuration.WebSocketServiceConfiguration.ServiceType">
+            <summary>
+            服务类型
+            </summary>
+        </member>
+        <member name="T:Nefarian.Configuration.WebSocketServiceConfigurationCollection">
+            <summary>
+            WebSocket服务配置集合
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.HttpReply">
+            <summary>
+            答复信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpReply.Headers">
+            <summary>
+            响应头
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpReply.Message">
+            <summary>
+            答复的消息
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.SessionEndEventArgs">
+            <summary>
+            Session会话结束事件参数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.SessionEndEventArgs.Session">
+            <summary>
+            已经结束的会话信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.WrappedSessionInfo.IsAbandoned">
+            <summary>
+            会话是否已经取消
+            </summary>
+        </member>
+        <member name="M:Nefarian.Extension.TypeExtension.IsImplementedInterface``1(System.Type)">
+            <summary>
+            判断类型是否实现了接口T
+            </summary>
+            <typeparam name="T">接口类型</typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Extension.TypeExtension.IsImplementedInterface(System.Type,System.Type)">
+            <summary>
+            判断类型是否实现了接口interfaceType
+            </summary>
+            <param name="t"></param>
+            <param name="interfaceType">接口类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Extension.TypeExtension.HasDefaultConstructor(System.Type)">
+            <summary>
+            判断类型是否具有公共的默认无参数构造函数
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Extension.TypeExtension.IsNumber(System.Type)">
+            <summary>
+            判断类型是否为数值
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Extension.WebOperationContextExtension.CreateAcceptableResponse``1(System.ServiceModel.Web.WebOperationContext,System.Collections.Generic.IList{System.Net.Mime.ContentType},``0)">
+            <summary>
+            根据客户端可接受的ContentType类型，创建特定格式的消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <param name="accepts">客户端可接受的ContentType集合</param>
+            <param name="instance">要写入到消息的对象</param>
+            <returns>如果ContentType集合中的所有项都不是默认可识别的ContentType，则返回null</returns>
+        </member>
+        <member name="M:Nefarian.Extension.WebOperationContextExtension.SetFileDownloadHeader(System.ServiceModel.Web.WebOperationContext,System.String,System.Int64)">
+            <summary>
+            设置文件下载响应标头
+            </summary>
+            <param name="context"></param>
+            <param name="fileName">文件名</param>
+            <param name="length">文件大小</param>
+        </member>
+        <member name="T:Nefarian.Exchange.IWriter`1">
+            <summary>
+            数据写入器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Nefarian.Exchange.IWriter`1.Write(System.Collections.Generic.IList{`0})">
+            <summary>
+            将数据写入到存储设备。该方法可能会被多个线程同时调用。
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="T:Nefarian.Exchange.AutoFlushBuffer`1">
+            <summary>
+            自动刷新缓冲区
+            </summary>
+        </member>
+        <member name="M:Nefarian.Exchange.AutoFlushBuffer`1.#ctor(Nefarian.Exchange.IWriter{`0},System.Int32,System.Int32)">
+            <param name="writer">将缓冲区中的数据写入到存储设备的写入器</param>
+            <param name="limit">当缓冲区中的数据个数达到该数量时，立即写入到存储设备</param>
+            <param name="interval">每隔指定的时间间隔（毫秒），无论缓冲区的数据个数是否达到limit，都写入存储设备</param>
+        </member>
+        <member name="M:Nefarian.Exchange.AutoFlushBuffer`1.Put(`0)">
+            <summary>
+            把数据放入缓冲区
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Nefarian.Exchange.AutoFlushBuffer`1.Change(System.Int32,System.Int32)">
+            <summary>
+            改变数据写入策略
+            </summary>
+            <param name="limit">缓冲区的数据上限</param>
+            <param name="interval">定时写入数据的时间间隔（毫秒）</param>
+        </member>
+        <member name="T:Nefarian.Exchange.ProducerConsumerContainer`1">
+            <summary>
+            生产者-消费者容器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.#ctor(System.Int32)">
+            <param name="size">容器能够容纳的元素个数</param>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.Put(`0)">
+            <summary>
+            将item放入容器。如果放入成功，则返回true；如果容器已满，item放入失败，则返回false
+            </summary>
+            <param name="item">放入的元素</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.Put(`0,System.Int32)">
+            <summary>
+            将item放入容器。如果放入成功，则返回true；如果容器已满，则会在指定超时时间内进行尝试，
+            如果在timeout之前放入成功，则返回true；到达timeout时依然没有放入成功，则返回false
+            </summary>
+            <param name="item">放入的元素</param>
+            <param name="timeout">超时的毫秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.PutAndKick(`0,`0@)">
+            <summary>
+            将item放入容器。如果容器已满，则会踢出最早放入的一个元素，并返回true表示踢出了一个元素；
+            如果容器未满，则返回false表示没有踢出元素
+            </summary>
+            <param name="item">放入的元素</param>
+            <param name="kicked">被踢出的元素</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.Take(`0@)">
+            <summary>
+            从容器中取出一个元素。如果取出成功，则返回true；如果容器为空，取出失败，则返回false
+            </summary>
+            <param name="item">被取出的元素</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.Take(`0@,System.Int32)">
+            <summary>
+            从容器中取出一个元素。如果取出成功，则返回true；如果容器为空，则会在指定超时时间内进行尝试，
+            如果在timeout之前取出成功，则返回true；到达timeout时依然没有取出成功，则返回false
+            </summary>
+            <param name="item">被取出的元素</param>
+            <param name="timeout">超时的毫秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.TakeMany(System.Int32,System.Collections.Generic.IList{`0}@)">
+            <summary>
+            从容器中一次性至多取出most个元素。如果取出了至少一个元素，则返回true；如果容器为空，取出失败，则返回false
+            </summary>
+            <param name="most">至多取出的元素个数</param>
+            <param name="items">被取出的元素列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ProducerConsumerContainer`1.Clear">
+            <summary>
+            清除容器中的所有元素
+            </summary>
+        </member>
+        <member name="P:Nefarian.Exchange.ProducerConsumerContainer`1.Count">
+            <summary>
+            容器中的元素个数
+            </summary>
+        </member>
+        <member name="P:Nefarian.Exchange.ProducerConsumerContainer`1.Size">
+            <summary>
+            容器大小
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.HttpRequest">
+            <summary>
+            请求信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpRequest.Method">
+            <summary>
+            请求的HTTP方法
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpRequest.UriMatch">
+            <summary>
+            请求匹配的uri模板
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpRequest.Headers">
+            <summary>
+            请求头
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.HttpRequest.Message">
+            <summary>
+            请求的消息
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.CrossOriginResourceSharingInspector">
+            <summary>
+            CORS跨域消息检查器
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.CrossOriginResourceSharingInspector.CORSInfo.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.CrossOriginResourceSharingInspector.CORSInfo.Origin">
+            <summary>
+            请求源
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.CrossOriginResourceSharingInspector.CORSInfo.AccessControlRequestMethod">
+            <summary>
+            访问控制请求方法
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.CrossOriginResourceSharingInspector.CORSInfo.AccessControlRequestHeaders">
+            <summary>
+            访问控制请求头
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ServiceRuntimeBehavior">
+            <summary>
+            服务运行时的核心行为
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ErrorHandlerAttribute">
+            <summary>
+            异常处理器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ErrorHandlerAttribute.OnError(System.Exception)">
+            <summary>
+            用于服务端记录错误日志
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:Nefarian.Core.ErrorHandlerAttribute.ProvideFault(System.Exception,System.ServiceModel.Channels.Message@)">
+            <summary>
+            向客户端返回错误消息
+            </summary>
+            <param name="error"></param>
+            <param name="fault"></param>
+        </member>
+        <member name="T:Nefarian.Core.ModuleBase">
+            <summary>
+            模块基类
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ModuleBase.Initialize(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="container">模块的容器</param>
+        </member>
+        <member name="P:Nefarian.Core.ModuleBase.Container">
+            <summary>
+            模块的容器
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ServiceBase">
+            <summary>
+            服务基类
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceBase.Session">
+            <summary>
+            当前用户的会话数据
+            </summary>
+        </member>
+        <member name="T:Nefarian.Exchange.ExchangeBehaviorImpl">
+            <summary>
+            交互行为实施者，用于实现方法交互
+            </summary>
+        </member>
+        <member name="T:Nefarian.Exchange.ExchangeCenter">
+            <summary>
+            交互中心
+            </summary>
+        </member>
+        <member name="M:Nefarian.Exchange.ExchangeCenter.Register``2">
+            <summary>
+            向交互中心注册交互类型
+            </summary>
+            <typeparam name="TInterface">交互接口</typeparam>
+            <typeparam name="TClass">实现交互接口，负责交互的类型</typeparam>
+        </member>
+        <member name="M:Nefarian.Exchange.ExchangeCenter.Register``2(System.String)">
+            <summary>
+            向交互中心注册命名的交互类型
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <typeparam name="TClass"></typeparam>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nefarian.Exchange.ExchangeCenter.GetInstance``1">
+            <summary>
+            从交互中心获取交互类型实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Exchange.ExchangeCenter.GetInstance``1(System.String)">
+            <summary>
+            从交互中心获取交互命名的类型实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Exchange.IMessageEntity`1">
+            <summary>
+            消息数据实体
+            <typeparam name="T">消息类型</typeparam>
+            </summary>
+        </member>
+        <member name="M:Nefarian.Exchange.IMessageEntity`1.Copy">
+            <summary>
+            复制消息数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Exchange.IMessageSubscriber`1">
+            <summary>
+            消息订阅者
+            <typeparam name="T">订阅的消息类型</typeparam>
+            </summary>
+        </member>
+        <member name="M:Nefarian.Exchange.IMessageSubscriber`1.Receive(`0)">
+            <summary>
+            接收消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Nefarian.Exchange.MessagePublisher">
+            <summary>
+            消息发布中心
+            </summary>
+        </member>
+        <member name="M:Nefarian.Exchange.MessagePublisher.Subscribe``2">
+            <summary>
+            向消息中心订阅消息
+            </summary>
+            <typeparam name="TMessage">消息的类型</typeparam>
+            <typeparam name="TSubscriber">消息订阅者的类型</typeparam>
+        </member>
+        <member name="M:Nefarian.Exchange.MessagePublisher.Publish``1(``0)">
+            <summary>
+            向订阅者广播发布消息
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nefarian.Extension.IEnumerableExtension.Exists``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})">
+            <summary>
+            判断当前集合是否包含与指定谓词所定义的条件相匹配的元素
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="match">查找条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Core.AuthenticationTicket">
+            <summary>
+            身份票据
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AuthenticationTicket.SessionID">
+            <summary>
+            Session会话ID
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AuthenticationTicket.Timestamp">
+            <summary>
+            票据创建时间戳
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AuthenticationTicket.VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.AuthenticationTicket.Signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:Nefarian.Core.ServiceRequestContext">
+            <summary>
+            服务请求上下文
+            </summary>
+        </member>
+        <member name="M:Nefarian.Core.ServiceRequestContext.Current``1">
+            <summary>
+            获取当前请求的上下文对象
+            </summary>
+            <typeparam name="T">适配器类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Core.ServiceRequestContext.Abandon">
+            <summary>
+            取消当前会话
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.IsMatched">
+            <summary>
+            当前请求是否能够匹配到服务处理方法
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.ShouldHandle">
+            <summary>
+            当前请求是否应该被服务处理
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.Ticket">
+            <summary>
+            身份票据
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.Session">
+            <summary>
+            当前用户的会话数据
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.Request">
+            <summary>
+            请求信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.Reply">
+            <summary>
+            答复信息
+            </summary>
+        </member>
+        <member name="P:Nefarian.Core.ServiceRequestContext.Items">
+            <summary>
+            请求相关的自定义数据
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.HttpCommunicator">
+            <summary>
+            Http通讯对象
+            </summary>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.#ctor(Nefarian.Utility.HttpCommunicator.ContentType)">
+            <param name="requestContentType">请求数据的内容类型</param>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.GetObject``1(System.String)">
+            <summary>
+            发送同步GET请求
+            </summary>
+            <typeparam name="T">响应数据的类型</typeparam>
+            <param name="url">请求的url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.Delete``1(System.String)">
+            <summary>
+            发送同步DELETE请求
+            </summary>
+            <typeparam name="T">响应数据的类型</typeparam>
+            <param name="url">请求的url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.Post``1(System.String,System.String)">
+            <summary>
+            发送同步POST请求
+            </summary>
+            <typeparam name="TRequest">请求数据的类型</typeparam>
+            <typeparam name="TResponse">响应数据的类型</typeparam>
+            <param name="url">请求的url</param>
+            <param name="requestData">请求的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.Put``1(System.String,System.String)">
+            <summary>
+            发送同步PUT请求
+            </summary>
+            <typeparam name="TRequest">请求数据的类型</typeparam>
+            <typeparam name="T">响应数据的类型</typeparam>
+            <param name="url">请求的url</param>
+            <param name="requestData">请求的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.Invoke``1(System.String,System.String,System.String)">
+            <summary>
+            发送同步请求
+            </summary>
+            <typeparam name="T">响应数据的类型</typeparam>
+            <param name="url">请求的url</param>
+            <param name="method">请求的方法</param>
+            <param name="requestData">post、put请求发送的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.CreateRequest(System.String,System.String)">
+            <summary>
+            创建请求对象
+            </summary>
+        </member>
+        <member name="M:Nefarian.Utility.HttpCommunicator.GetResponseString(System.Net.HttpWebResponse)">
+            <summary>
+            获取响应数据字符串
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Utility.HttpCommunicator.Timeout">
+            <summary>
+            请求超时时间（秒）
+            </summary>
+        </member>
+        <member name="P:Nefarian.Utility.HttpCommunicator.Headers">
+            <summary>
+            请求头
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.HttpCommunicator.ContentType">
+            <summary>
+            请求数据内容的类型
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.FormDataErrorCode">
+            <summary>
+            Http文件上传错误代码
+            </summary>
+        </member>
+        <member name="F:Nefarian.Utility.FormDataErrorCode.TooLarge">
+            <summary>
+            文件超过限制大小
+            </summary>
+        </member>
+        <member name="F:Nefarian.Utility.FormDataErrorCode.Format">
+            <summary>
+            上传内容格式不符合multipart/form-data定义的标准格式
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.MultipartFormDataParser">
+            <summary>
+            解析Http文件上传（multipart/form-data）类型的流，只支持单个文件上传
+            </summary>
+        </member>
+        <member name="M:Nefarian.Utility.MultipartFormDataParser.#ctor(System.Int32)">
+            <param name="maxSize">限制上传的文件流的最大大小（字节）</param>
+        </member>
+        <member name="M:Nefarian.Utility.MultipartFormDataParser.Write(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            从上传的文件流中读取文件，并写入目标流
+            </summary>
+            <param name="sourceStream">上传的文件流</param>
+            <param name="writeStream">要写入的目标流</param>
+        </member>
+        <member name="P:Nefarian.Utility.MultipartFormDataParser.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:Nefarian.Utility.MultipartFormDataParser.ContentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:Nefarian.Utility.MultipartFormDataParser.FileSize">
+            <summary>
+            文件大小（字节）
+            </summary>
+        </member>
+        <member name="P:Nefarian.Utility.MultipartFormDataParser.Success">
+            <summary>
+            是否写入成功
+            </summary>
+        </member>
+        <member name="P:Nefarian.Utility.MultipartFormDataParser.ErrorCode">
+            <summary>
+            当写入失败时，用于描述失败原因
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.QueryLambdaBuilder`1">
+            <summary>
+            查询Lambda表达式拼接器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Nefarian.Utility.QueryLambdaBuilder`1.And(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            使用and连接一个查询表达式
+            </summary>
+            <param name="lambda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.QueryLambdaBuilder`1.And(Nefarian.Utility.QueryLambdaBuilder{`0})">
+            <summary>
+            使用and连接一个带有括号优先级的查询表达式
+            </summary>
+            <param name="lambda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.QueryLambdaBuilder`1.Or(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            使用or连接一个查询表达式
+            </summary>
+            <param name="lambda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.QueryLambdaBuilder`1.Or(Nefarian.Utility.QueryLambdaBuilder{`0})">
+            <summary>
+            使用or连接一个带有括号优先级的查询表达式
+            </summary>
+            <param name="lambda"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nefarian.Utility.QueryLambdaBuilder`1.Lambda">
+            <summary>
+            获取查询表达式
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.TimestampConverter">
+            <summary>
+            DateTime类型与时间戳的转换
+            </summary>
+        </member>
+        <member name="M:Nefarian.Utility.TimestampConverter.ToTimestamp(System.DateTime)">
+            <summary>
+            将DateTime转换为时间戳
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.TimestampConverter.ToDateTime(System.Int64)">
+            <summary>
+            将时间戳转换为本地时间
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.TimestampConverter.ToDateTimeUTC(System.Int64)">
+            <summary>
+            将时间戳转换为UTC时间
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Utility.WcfSerializer">
+            <summary>
+            wcf序列化器
+            </summary>
+        </member>
+        <member name="F:Nefarian.Utility.WcfSerializer.Json">
+            <summary>
+            json序列化器
+            </summary>
+        </member>
+        <member name="F:Nefarian.Utility.WcfSerializer.Xml">
+            <summary>
+            xml序列化器
+            </summary>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeString(System.Object)">
+            <summary>
+            将对象序列化为字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeBinary(System.Object)">
+            <summary>
+            将对象序列化为字节
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeStream(System.Object)">
+            <summary>
+            将对象序列化为流
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeString(System.Object,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            将对象序列化为字符串
+            </summary>
+            <param name="obj"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeBinary(System.Object,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            将对象序列化为字节
+            </summary>
+            <param name="obj"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.SerializeStream(System.Object,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            将对象序列化为流
+            </summary>
+            <param name="obj"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.String)">
+            <summary>
+            从字符串反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.Byte[])">
+            <summary>
+            从字节反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.IO.Stream)">
+            <summary>
+            从流反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.String,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            从字符串反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.Byte[],System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            从字节反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nefarian.Utility.WcfSerializer.Deserialize``1(System.IO.Stream,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            从流反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="knownTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nefarian.Utility.WcfSerializer.WcfJsonSerializer">
+            <summary>
+            wcf json序列化器
+            </summary>
+        </member>
+        <member name="T:Nefarian.Utility.WcfSerializer.WcfXmlSerializer">
+            <summary>
+            wcf xml序列化器
+            </summary>
+        </member>
+    </members>
+</doc>

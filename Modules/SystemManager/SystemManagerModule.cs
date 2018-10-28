@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lilac.SystemManager
 {
-    public class SystemManagerModule
+    public class SystemManagerModule : Nefarian.Core.ModuleBase
     {
     }
 }

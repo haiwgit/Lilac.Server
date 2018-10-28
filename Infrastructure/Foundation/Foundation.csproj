@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3038B0D1-62D6-47E7-8F33-8D1C4EB570DD}</ProjectGuid>
+    <ProjectGuid>{36589688-608C-452F-8FE9-D30A0D6F0FE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lilac.Foundation</RootNamespace>
@@ -36,9 +36,6 @@
     <AssemblyOriginatorKeyFile>MyKeyToken.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\..\packages\Microsoft.Practices.Unity.3.5.1404\lib\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
     <Reference Include="Nefarian">
       <HintPath>..\..\packages\Nefarian.2.2.0.34720\lib\Nefarian.dll</HintPath>
     </Reference>
@@ -60,13 +57,13 @@
     <Compile Include="Services\AttachmentService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MyKeyToken.snk" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\LilacCore\LilacCore.csproj">
       <Project>{7330c0ec-f63c-4e17-87bb-7ab077b7cb41}</Project>
       <Name>LilacCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyKeyToken.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

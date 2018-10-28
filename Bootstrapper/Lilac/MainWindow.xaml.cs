@@ -32,7 +32,7 @@ namespace Lilac
             notifyIcon.BalloonTipText = "服务已启动";
             notifyIcon.Text = this.Title;
             Assembly asm = this.GetType().Assembly;
-            Stream iocStream = asm.GetManifestResourceStream("Lilac.service_log.ico");
+            Stream iocStream = asm.GetManifestResourceStream("Lilac.favicon.ico");
             notifyIcon.Icon = new System.Drawing.Icon(iocStream);
             notifyIcon.Visible = true;
             notifyIcon.ShowBalloonTip(1000);
@@ -67,7 +67,13 @@ namespace Lilac
         }
         private void Boot_OnServiceOpened(object sender, ServiceOpenEventArgs e)
         {
-            throw new NotImplementedException();
+            Dispatcher.Invoke(() => {
+                foreach (Uri u in e.EndpointsAddress)
+                {
+                    txtMsg.AppendText(u.AbsoluteUri);
+                    txtMsg.AppendText(Environment.NewLine);
+                }
+            });
         }
 
         private void Boot_PreInitModules(object sender, BootstrapperEventArgs e)

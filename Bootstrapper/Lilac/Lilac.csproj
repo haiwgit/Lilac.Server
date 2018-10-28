@@ -79,8 +79,15 @@
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.1.2.13.0\lib\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Practices.Unity.3.5.1404\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\..\packages\Microsoft.Practices.Unity.3.5.1404\lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\packages\Microsoft.Practices.Unity.3.5.1404\lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
     <Reference Include="Nefarian">
       <HintPath>..\..\packages\Nefarian.2.2.0.34720\lib\Nefarian.dll</HintPath>
@@ -172,6 +179,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Foundation\Foundation.csproj">
+      <Project>{36589688-608c-452f-8fe9-d30a0d6f0fe5}</Project>
+      <Name>Foundation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\LilacCore\LilacCore.csproj">
       <Project>{7330c0ec-f63c-4e17-87bb-7ab077b7cb41}</Project>
       <Name>LilacCore</Name>
@@ -180,6 +191,9 @@
       <Project>{f75c7a0c-c643-48bb-a858-c81091e1779f}</Project>
       <Name>SystemManager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
