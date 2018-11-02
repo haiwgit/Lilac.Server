@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Foundation.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Foundation.dll" size="6144">
       <assemblyIdentity name="Foundation" version="1.0.0.0" publicKeyToken="3EFEEE24542B623D" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YX0EDdkkgE2+8ibuN8bboctoeBDZ8X49a7JP3RKHCEU=</dsig:DigestValue>
+        <dsig:DigestValue>KWnFDuhRwR6voH+MGcjEXJ5ZJQPBSE/q8tLScHiKqag=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,19 +85,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lozqvC1LC2Kss+HDQIDbpk7hVq8SFVy7f4wna7VjqP0=</dsig:DigestValue>
+        <dsig:DigestValue>9HgKH67q77H48lZl2DPPPvNxYwu/jHEQIIbrJT/iMMk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LilacCore.dll" size="13312">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LilacCore.dll" size="16384">
       <assemblyIdentity name="LilacCore" version="1.0.0.0" publicKeyToken="3EFEEE24542B623D" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kuX/rdcXwR+5viiX433rT8mzoGLektUCz0j01bm4GVE=</dsig:DigestValue>
+        <dsig:DigestValue>0QMBcRggJdYBbEItltXaqgtFZcEYf2QpNGCM4cg1jhQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -186,14 +186,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemManager.dll" size="4608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemManager.dll" size="8192">
       <assemblyIdentity name="SystemManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IAJHjvvGH9KtgHITV0SmVKX/JoG+Up3uPMDAd8oaM5c=</dsig:DigestValue>
+        <dsig:DigestValue>wfRBl/RaMUyr8j9OHUpA6k2f9e0Mhi42N329ZHvXLvs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -206,13 +206,13 @@
       <dsig:DigestValue>k8Q3m9H3IY9/M3LhByWoGXUbBGZSCju8qsfcCUdd57M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Lilac.exe.config" size="5418">
+  <file name="Lilac.exe.config" size="5417">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>lUvkZZ4HQSz3E+zwjVDE2U0uF5UPwrSrMwt6hiXBb8s=</dsig:DigestValue>
+      <dsig:DigestValue>dxxXDx9aXJ2RhxkQLATkgoDMMmmAkb4ezQT/RLse/f4=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
