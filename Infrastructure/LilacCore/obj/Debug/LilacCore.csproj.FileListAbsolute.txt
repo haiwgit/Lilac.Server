@@ -41,3 +41,7 @@ D:\Dev\Demo\Angular\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.csproj.C
 D:\Dev\Demo\Angular\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.csproj.CopyComplete
 D:\Dev\Demo\Angular\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.dll
 D:\Dev\Demo\Angular\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.pdb
+G:\Work\Lilac\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.csprojAssemblyReference.cache
+G:\Work\Lilac\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.csproj.CoreCompileInputs.cache
+G:\Work\Lilac\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.dll
+G:\Work\Lilac\Server\Infrastructure\LilacCore\obj\Debug\LilacCore.pdb

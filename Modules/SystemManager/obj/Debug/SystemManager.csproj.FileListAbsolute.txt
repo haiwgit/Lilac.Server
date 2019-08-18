@@ -46,3 +46,7 @@ D:\Dev\Demo\Angular\Server\Modules\SystemManager\obj\Debug\SystemManager.csproj.
 D:\Dev\Demo\Angular\Server\Modules\SystemManager\obj\Debug\SystemManager.csproj.CopyComplete
 D:\Dev\Demo\Angular\Server\Modules\SystemManager\obj\Debug\SystemManager.dll
 D:\Dev\Demo\Angular\Server\Modules\SystemManager\obj\Debug\SystemManager.pdb
+G:\Work\Lilac\Server\Modules\SystemManager\obj\Debug\SystemManager.csprojAssemblyReference.cache
+G:\Work\Lilac\Server\Modules\SystemManager\obj\Debug\SystemManager.csproj.CoreCompileInputs.cache
+G:\Work\Lilac\Server\Modules\SystemManager\obj\Debug\SystemManager.dll
+G:\Work\Lilac\Server\Modules\SystemManager\obj\Debug\SystemManager.pdb

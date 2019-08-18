@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KWnFDuhRwR6voH+MGcjEXJ5ZJQPBSE/q8tLScHiKqag=</dsig:DigestValue>
+        <dsig:DigestValue>y0VI4J110C+fmsdnTEB31SevtIKHliWY9iCgrZ/lFFc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9HgKH67q77H48lZl2DPPPvNxYwu/jHEQIIbrJT/iMMk=</dsig:DigestValue>
+        <dsig:DigestValue>scWmqef9vFuH9jV79gej3zH8Y82i55zhxHj6ECzPz1A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -206,13 +206,13 @@
       <dsig:DigestValue>k8Q3m9H3IY9/M3LhByWoGXUbBGZSCju8qsfcCUdd57M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Lilac.exe.config" size="5417">
+  <file name="Lilac.exe.config" size="5534">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dxxXDx9aXJ2RhxkQLATkgoDMMmmAkb4ezQT/RLse/f4=</dsig:DigestValue>
+      <dsig:DigestValue>c9mop8V13StEXkvyLfgp0OmSqnP0/+d/vNxqKGPFopg=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

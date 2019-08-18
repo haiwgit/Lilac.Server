@@ -84,7 +84,8 @@ namespace Lilac
             {
                 config.Mappings(x => x.FluentMappings.AddFromAssembly(module.ModuleType.Assembly));
             }
-            config.Database(FluentNHibernate.Cfg.Db.MsSqlConfiguration.MsSql2008.ConnectionString(connectionStr));
+            //config.Database(FluentNHibernate.Cfg.Db.MsSqlConfiguration.MsSql2008.ConnectionString(connectionStr));
+            config.Database(FluentNHibernate.Cfg.Db.MySQLConfiguration.Standard.ConnectionString(connectionStr));
 
             config.CurrentSessionContext("wcf_operation");
             ISessionFactory sessionFactory;

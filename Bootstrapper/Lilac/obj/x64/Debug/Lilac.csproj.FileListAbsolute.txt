@@ -1,0 +1,5 @@
+G:\Work\Lilac\Server\Bootstrapper\Lilac\obj\x64\Debug\Lilac.csprojAssemblyReference.cache
+G:\Work\Lilac\Server\Bootstrapper\Lilac\obj\x64\Debug\MainWindow.g.cs
+G:\Work\Lilac\Server\Bootstrapper\Lilac\obj\x64\Debug\App.g.cs
+G:\Work\Lilac\Server\Bootstrapper\Lilac\obj\x64\Debug\Lilac_MarkupCompile.cache
+G:\Work\Lilac\Server\Bootstrapper\Lilac\obj\x64\Debug\Lilac_MarkupCompile.lref

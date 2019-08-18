@@ -1,0 +1,2 @@
+G:\Work\Lilac\Server\Infrastructure\Foundation\obj\x64\Debug\Foundation.csprojAssemblyReference.cache
+G:\Work\Lilac\Server\Infrastructure\Foundation\obj\x64\Debug\Foundation.csproj.CoreCompileInputs.cache

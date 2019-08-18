@@ -1,0 +1,1 @@
+G:\Work\Lilac\Server\Modules\SystemManager\obj\x64\Debug\SystemManager.csproj.CoreCompileInputs.cache
