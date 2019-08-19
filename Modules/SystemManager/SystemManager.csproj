@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IAuthService.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="SystemManagerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
