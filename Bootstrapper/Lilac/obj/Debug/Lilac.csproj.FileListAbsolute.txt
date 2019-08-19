@@ -178,3 +178,4 @@ E:\Workspace\Text\Lilac\Server\Bootstrapper\Lilac\obj\Debug\Lilac.application
 E:\Workspace\Text\Lilac\Server\Bootstrapper\Lilac\obj\Debug\Lilac.csproj.CopyComplete
 E:\Workspace\Text\Lilac\Server\Bootstrapper\Lilac\obj\Debug\Lilac.exe
 E:\Workspace\Text\Lilac\Server\Bootstrapper\Lilac\obj\Debug\Lilac.pdb
+G:\Work\Lilac\Server\Bootstrapper\Lilac\bin\Debug\Renci.SshNet.dll

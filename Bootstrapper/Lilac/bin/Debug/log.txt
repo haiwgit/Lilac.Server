@@ -1,0 +1,28 @@
+2019-08-20 02:22:05,782 [11] ERROR Lilac [(null)] - Lilac.LilacCore.Entities.LogData
+System.ServiceModel.CommunicationException: 企图在不存在的网络连接上进行操作。 ---> System.Net.HttpListenerException: 企图在不存在的网络连接上进行操作。
+   在 System.Net.HttpResponseStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.ServiceModel.Channels.HttpOutput.ListenerResponseHttpOutput.ListenerResponseOutputStream.Close()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ServiceModel.Channels.HttpOutput.ListenerResponseHttpOutput.ListenerResponseOutputStream.Close()
+   在 System.ServiceModel.Channels.BufferedOutputAsyncStream.Close()
+   在 System.ServiceModel.Channels.HttpOutput.WriteStreamedMessage(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpPipeline.EmptyHttpPipeline.SendReplyCore(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpPipeline.EmptyHttpPipeline.SendReply(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpRequestContext.OnReply(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestContextBase.Reply(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.Reply(MessageRpc& rpc)
+2019-08-20 02:24:56,730 [13] ERROR Lilac [(null)] - 操作日志insert出错。
+NHibernate.MappingException: No persister for: Lilac.LilacCore.Entities.OperationLog
+   在 NHibernate.Impl.SessionFactoryImpl.GetEntityPersister(String entityName)
+   在 NHibernate.Impl.SessionImpl.GetEntityPersister(String entityName, Object obj)
+   在 NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   在 NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   在 NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   在 NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   在 NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   在 NHibernate.Impl.SessionImpl.Save(Object obj)
+   在 Lilac.LilacCore.ServerSite.OperationLogAttribute.BeforeSendReply(Message& reply, Object correlationState) 位置 G:\Work\Lilac\Server\Infrastructure\LilacCore\ServerSite\OperationLogAttribute.cs:行号 40

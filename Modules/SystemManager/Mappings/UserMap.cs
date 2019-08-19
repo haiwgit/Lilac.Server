@@ -13,7 +13,7 @@ namespace Lilac.SystemManager.Mappings
         public UserMap()
         {
             Not.LazyLoad();
-            Table("ss_users");
+            Table("sys_users");
             Id(p => p.ID, "ID");
             Map(p => p.Account, "ACCOUNT");
             Map(p => p.Name, "NAME");
