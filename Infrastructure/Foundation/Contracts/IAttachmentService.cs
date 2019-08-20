@@ -13,5 +13,7 @@ namespace Lilac.Foundation.Contracts
     {
         [WebGet]
         string getstriing();
+        [WebGet]
+        string hello(string str);
     }
 }

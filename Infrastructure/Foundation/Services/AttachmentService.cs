@@ -38,5 +38,8 @@ namespace Lilac.Foundation.Services
 
             return null;
         }
+       public string hello(string str) {
+            return str + DateTime.Now.ToString();
+        }
     }
 }

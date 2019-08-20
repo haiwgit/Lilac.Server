@@ -50,5 +50,7 @@ namespace Lilac.LilacCore.Exchange
         /// <param name="fileName"></param>
         /// <returns></returns>
         byte[] TransAttachment(string fileName);
+
+      
     }
 }
