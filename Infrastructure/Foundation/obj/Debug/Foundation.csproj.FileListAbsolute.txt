@@ -51,16 +51,13 @@ G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Nefarian.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\NHibernate.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\FluentNHibernate.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\log4net.dll
-G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Newtonsoft.Json.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Iesi.Collections.dll
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\LilacCore.pdb
-G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Microsoft.Practices.Unity.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Nefarian.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\NHibernate.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\FluentNHibernate.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\log4net.xml
-G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\bin\Debug\Iesi.Collections.xml
 G:\Work\Lilac\Server\Infrastructure\Foundation\obj\Debug\Foundation.csprojAssemblyReference.cache
 G:\Work\Lilac\Server\Infrastructure\Foundation\obj\Debug\Foundation.csproj.CoreCompileInputs.cache

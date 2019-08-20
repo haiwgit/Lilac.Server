@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Lilac.exe.manifest" size="13248">
+    <dependentAssembly dependencyType="install" codebase="Lilac.exe.manifest" size="13928">
       <assemblyIdentity name="Lilac.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oG/5984uJ6z+ihAYpdPTyb6bV39TKQQl7MJZzz0hhhU=</dsig:DigestValue>
+        <dsig:DigestValue>N5TOeUt2fGd2GLGPXfqF5Xv/66quSlZqHv/R4Z4IPyY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

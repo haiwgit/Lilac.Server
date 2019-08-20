@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HfYPQ6GhLw8yUfhkc9MUkVRBqMe21XQGrn3L0NNvap4=</dsig:DigestValue>
+        <dsig:DigestValue>jDGCyBEddOr8aZ/w+p79IlZ4edXbeQJY1zxRW9tkrFY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,19 +85,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hoBN7dv2WZ5/iJCpLuLZi34C/GrmmWosQK9CRC+pknM=</dsig:DigestValue>
+        <dsig:DigestValue>7H/L9HHtW9qI1wfSNb+frRUOkjloy7NNUHk6+Ah6zTM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LilacCore.dll" size="15872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LilacCore.dll" size="16384">
       <assemblyIdentity name="LilacCore" version="1.0.0.0" publicKeyToken="3EFEEE24542B623D" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PIY1GCOf1ICkzDlgzx0FP8STrLXOP1HhXCgcpJC80k8=</dsig:DigestValue>
+        <dsig:DigestValue>5miocS7+vt0SChBi7skgoZltnmcMiaOOAs6PeRlRZ+8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -186,6 +186,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Renci.SshNet.dll" size="422912">
+      <assemblyIdentity name="Renci.SshNet" version="2016.1.0.0" publicKeyToken="1CEE9F8BDE3DB106" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9jFe0UZDj3cCAzaBBD+P6WkO05oqvJoZIkZCSUSjono=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemManager.dll" size="9216">
       <assemblyIdentity name="SystemManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -193,7 +205,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ov6VQK9PaSOYaqai7SWoHpwS1mGE9UOcTczkz6CLdsE=</dsig:DigestValue>
+        <dsig:DigestValue>qhc9PtnPneUIQ+sLpiOT3LGYhXxuXWHnfRgC4VtN92E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -212,7 +224,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WCE5KKoj5/DuhPh7wYL3EDubwRhxK/O8GwSJF5bZVWY=</dsig:DigestValue>
+      <dsig:DigestValue>MSDM1xEeRGuFncZhtLHOjBmoYJehx79ICSUK/ACowug=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

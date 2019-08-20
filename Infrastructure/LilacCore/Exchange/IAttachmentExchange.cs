@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Lilac.LilacCore.Exchange
 {
+    [ServiceContract]
     public interface IAttachmentExchange
     {
         /// <summary>
@@ -15,12 +18,14 @@ namespace Lilac.LilacCore.Exchange
         /// </summary>
         /// <param name="bizid">附件关联的业务数据ID</param>
         /// <returns></returns>
+        [WebGet]
         List<Attachment> GetAttachments(string bizID);
 
         /// <summary>
         /// 删除附件
         /// </summary>
         /// <param name="attch"></param>
+        
         void DeleteAttachment(Attachment attch);
 
         /// <summary>
